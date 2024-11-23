@@ -14,39 +14,48 @@ Put --> Edit/Update
 /* Read Operation --> Get route for displaying the assignments list */
 router.get('/', async (req, res, next) => {
     try {
-        const assignments = await Assignment.find();
+        const AssignmentList = await Assignment.find();
         res.render('Assignment/list', {
             title: 'Assignments',
-            assignmentList: assignments,
+            AssignmentList:AssignmentList,
         });
     } catch (err) {
         console.error(err);
-        res.render('assignment/list', {
+        res.render('Assignment/list', {
             error: 'Error fetching assignments from the server',
         });
     }
 });
 
 /* Create Operation --> Get route for displaying the Add Page */
-router.get('/add', (req, res) => {
-    res.render('Assignment/add', {
-        title: 'Add Assignment',
-    });
+router.get('/add',async(req,res,next)=>{
+    try{
+        res.render('Assignment/add',{
+            title: 'Add Assignment'
+        })
+    }
+    catch(err)
+    {
+        console.error(err);
+        res.render('Assignment/list',{
+            error:'Error on the server'
+        })
+    }
 });
 
 /* Create Operation --> Post route for processing the Add Page */
 router.post('/add', async (req, res) => {
     try {
-        const newAssignment = {
-            name: req.body.Name,
-            teacher: req.body.Teacher,
-            subject: req.body.Subject,
-            description: req.body.Description,
-            dueDate: req.body.Due,
-        };
+        let newAssignment = Assignment({
+            "Name": req.body.Name,
+            "Teacher": req.body.Teacher,
+            "Subject": req.body.Subject,
+            "Description": req.body.Description,
+            "Due": req.body.Due,
+        });
 
-        await Assignment.create(newAssignment);
-        res.redirect('/assignments');
+        Assignment.create(newAssignment);
+        res.redirect('/assignmentslist');
     } catch (err) {
         console.error(err);
         res.render('Assignment/add', {
@@ -81,15 +90,15 @@ router.post('/edit/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updatedAssignment = {
-            name: req.body.Name,
-            teacher: req.body.Teacher,
-            subject: req.body.Subject,
-            description: req.body.Description,
-            dueDate: req.body.Due,
+            "Name": req.body.Name,
+            "Teacher": req.body.Teacher,
+            "Subject": req.body.Subject,
+            "Description": req.body.Description,
+            "Due": req.body.Due,
         };
 
         await Assignment.findByIdAndUpdate(id, updatedAssignment, { new: true });
-        res.redirect('/assignments');
+        res.redirect('/assignmentslist');
     } catch (err) {
         console.error(err);
         res.render('Assignment/edit', {
@@ -104,7 +113,7 @@ router.get('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id;
         await Assignment.findByIdAndDelete(id);
-        res.redirect('/assignments');
+        res.redirect('/assignmentslist');
     } catch (err) {
         console.error(err);
         res.render('Assignment/list', {

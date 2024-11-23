@@ -7,7 +7,7 @@ let assignmentModel = mongoose.Schema({
     Teacher: String,
     Subject: String,
     Description: String,
-    Due: Number
+    Due: String
 },
 {
     collection:"Bio_assignments"

@@ -11,8 +11,8 @@ router.get('/home', function(req, res, next) {
 });
 
 /* GET assignment page. */
-router.get('/', function(req, res, next) {
-  res.render('Assignment/list', { title: 'Assignments' });
+router.get('/assignments', function(req, res, next) {
+  res.render('index', { title: 'Assignments' });
 });
 
 module.exports = router;

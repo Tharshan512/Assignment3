@@ -17,21 +17,21 @@
                     <th class="col-4">Description</th>
                     <th class="text-center col-1">Due</th>
                 </tr>
-                <% for(let count=0;count<assignmentList.length;count++) { %>
+                <% for(let count=0;count<AssignmentList.length;count++) { %>
                 <tr class="d-flex">
-                    <td class="text-center col-2"><%= assignmentList[count].Name %></td>
-                    <td class="text-center col-2"><%= assignmentList[count].Teacher %></td>
-                    <td class="text-center col-1"><%=assignmentList[count].Subject%></td>
-                    <td class="col-4"><%= assignmentList[count].Description %> </td>
-                    <td class="text-center col-1"><%= assignmentList[count].Due %></td>
+                    <td class="text-center col-2"><%= AssignmentList[count].Name %></td>
+                    <td class="text-center col-2"><%= AssignmentList[count].Teacher %></td>
+                    <td class="text-center col-1"><%=AssignmentList[count].Subject%></td>
+                    <td class="col-4"><%= AssignmentList[count].Description %> </td>
+                    <td class="text-center col-1"><%= AssignmentList[count].Due %></td>
                     <td class="text-center col-1">
-                        <a href="/assignmentslist/edit/<%= assignmentList[count]._id%>"
+                        <a href="/assignmentslist/edit/<%= AssignmentList[count]._id%>"
                             class="btn btn-primary btn-sm">
                         <i class="fas fa-pencil-alt"></i>Edit
                     </a>
                     </td>
                     <td class="text-center col-1">
-                        <a href="/assignmentslist/delete/<%= assignmentList[count]._id%>"
+                        <a href="/assignmentslist/delete/<%= AssignmentList[count]._id%>"
                             class="btn btn-danger btn-sm">
                         <i class="fas fa-trash-alt"></i>Delete
                     </a>
