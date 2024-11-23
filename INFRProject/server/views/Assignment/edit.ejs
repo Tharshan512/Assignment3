@@ -7,24 +7,24 @@
             <h1><%= title %></h1>
             <form class="form" method="POST">
                 <div class="form-group">
-                    <label for="nameTextField">assignment Title</label>
-                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter the assignment Title" name="Name" value="<%= assignment.Name %>" required>
+                    <label for="Name">Name of Assignment</label>
+                    <input type="text" class="form-control" id="Name" placeholder="Enter the assignment Title" name="Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="authorTextField">assignment Author</label>
-                    <input type="text" class="form-control" id="authorTextField" placeholder="Enter the assignment Author" name="Author" value="<%= assignment.Author %>" required>
+                    <label for="Teacher">Name of Teacher</label>
+                    <input type="text" class="form-control" id="Teacher" placeholder="Enter the Teacher Name" name="Teacher" required>
                 </div>
                 <div class="form-group">
-                    <label for="publishedTextField">Published</label>
-                    <input type="text" class="form-control" id="publishedTextField" placeholder="Enter the Published year" name="Published" value="<%= assignment.Published %>" required>
+                    <label for="Subject">Class</label>
+                    <input type="text" class="form-control" id="Subject" placeholder="Enter the Subject" name="Subject" required>
                 </div>
                 <div class="form-group">
-                    <label for="descriptionTextArea">assignment Description</label>
-                    <textarea type="text" class="form-control" id="descriptionTextArea"  placeholder="enter the assignment Description" name="Description" required><%= assignment.Description %></textarea>
+                    <label for="Description">assignment Description</label>
+                    <textarea type="text" class="form-control" id="Description"  placeholder="Enter the assignment Description" name="Description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="priceTextField">Price</label>
-                    <input type="text" class="form-control" id="priceTextField" placeholder="assignment's Price" name="Price" value="<%= assignment.Price %>" required>
+                    <label for="Due">Due Date</label>
+                    <input type="text" class="form-control" id="Due" placeholder="Enter assignment due date" name="Due" required>
                 </div>
                 <button class="btn btn-primary" type="submit">Submit
                 <i class="fas fa-edit"></i></button>  

@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 
 let assignmentModel = mongoose.Schema({
     Name: String,
-    Author: String,
-    Published: String,
+    Teacher: String,
+    Subject: String,
     Description: String,
-    Price: Number
+    Due: Number
 },
 {
     collection:"Bio_assignments"
