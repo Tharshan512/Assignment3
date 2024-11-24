@@ -5,7 +5,7 @@
  */
 
 var app = require('./server/config/app');
-var debug = require('debug')('infrproject:server');
+var debug = require('debug')('Assignment3:server');
 var http = require('http');
 
 /**
