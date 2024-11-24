@@ -5,4 +5,12 @@
     <p>Welcome to Assigment tracker</p>
     <h2> On this Website you will be able to track your assignments and also the due dates.</h2>
     <p>Based on the informaton you input, you will be able to schedule how your day will look like so you can finish tasks efficiently and with time to spare.</p>
+    <li class="create-tournament-button">
+            <% if(title=="Assignments") { %>
+              <a class="nav-link active" href="/assignmentslist">
+            <% } else {%>
+              <a class="nav-link" href="/assignmentslist">
+            <% } %>  
+            <i class="fa-solid fa-assignment"></i> Create your Assignment tracker here</a>
+          </li>
 <%- include Partials/footer.ejs%>
