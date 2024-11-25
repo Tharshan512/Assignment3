@@ -3,8 +3,6 @@ var router = express.Router();
 let mongoose = require('mongoose');
 // telling my router that I have this model
 let Assignment = require('../model/assignment.js');
-//const assignment = require('../model/assignment.js');
-//let assignmentController = require('../controllers/assignment.js')
 /* Get route for the assignment list - Read Operation */
 /*
 GET,
