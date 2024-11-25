@@ -1,24 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #6dd5ed, #ffffff); /* Gradient background */
+    background: linear-gradient(to bottom, #00c8ff, #ffffff); /* Gradient background */
     color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
 }
-
+#listMain{min-width: 100%;}
 header {
     margin-top: 50px;
 }
 
-.logo-container {
-    margin-bottom: 20px;
-}
-
-.team-logo {
-    width: 150px; /* Adjust the size of your logo */
-    height: auto;
-}
 
 h1 {
     font-size: 2.5em;
